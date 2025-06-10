@@ -58,6 +58,14 @@ class LinkedList
     "head node vlaue: #{@head.value}"
   end
 
+  def tail_value
+    node = @head
+    until node.next_node.nil?
+      node = node.next_node
+    end
+
+    "value of last node is : #{node.value}"
+  end
 
 end
 
@@ -86,3 +94,4 @@ list.prepend("works")
 p list.head
 puts list.size
 puts list.head_value
+puts list.tail_value
