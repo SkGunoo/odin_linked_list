@@ -50,7 +50,8 @@ class LinkedList
       count += 1
       start = start.next_node
     end
-    "node count: #{count}"
+    puts "node count: #{count}"
+    count
   end
 
 
@@ -65,6 +66,21 @@ class LinkedList
     end
 
     "value of last node is : #{node.value}"
+  end
+
+  #get the value from the node at cerain index
+  def at(index)
+    if index >= size.to_i
+      puts size.to_i
+      "index is out of linked list size "
+    else
+      target_node = @head
+      index.times do |num|
+        target_node = target_node.next_node
+      end
+      target_node.value
+    end
+
   end
 
 end
@@ -92,6 +108,7 @@ list.prepend("works")
 
 
 p list.head
-puts list.size
+list.size
 puts list.head_value
 puts list.tail_value
+puts list.at(4)
