@@ -53,6 +53,12 @@ class LinkedList
     "node count: #{count}"
   end
 
+
+  def head_value
+    "head node vlaue: #{@head.value}"
+  end
+
+
 end
 
 
@@ -79,3 +85,4 @@ list.prepend("works")
 
 p list.head
 puts list.size
+puts list.head_value
