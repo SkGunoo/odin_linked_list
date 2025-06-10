@@ -80,7 +80,22 @@ class LinkedList
       end
       target_node.value
     end
+  end
 
+  #removes last element from the list 
+  def pop
+    if @head.nil? 
+      puts "there is no node to pop"
+    #if there is only on node @head
+    elsif @head.next_node.nil?
+      @head = nil
+    #travel to the node before the last one and set it to point @tail
+    else
+      index_of_node_before_last = size.to_i - 2
+      node = @head
+      index_of_node_before_last.times {node = node.next_node}
+      node.next_node = @tail
+    end
   end
 
 end
@@ -111,4 +126,6 @@ p list.head
 list.size
 puts list.head_value
 puts list.tail_value
-puts list.at(4)
+# puts list.at(2)
+list.pop
+p list.head
