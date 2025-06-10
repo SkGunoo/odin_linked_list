@@ -98,6 +98,15 @@ class LinkedList
     end
   end
 
+  def contains?(value)
+    node = @head
+    while node
+      return true if node.value == value
+      node = node.next_node
+    end
+    false
+  end
+
 end
 
 
@@ -122,10 +131,11 @@ list.prepend("haha")
 list.prepend("works")
 
 
-p list.head
-list.size
-puts list.head_value
-puts list.tail_value
+# p list.head
+# list.size
+# puts list.head_value
+# puts list.tail_value
 # puts list.at(2)
-list.pop
-p list.head
+# list.pop
+# p list.head
+p list.contains?("test2")
