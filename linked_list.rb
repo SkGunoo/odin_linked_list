@@ -118,6 +118,16 @@ class LinkedList
     nil
   end
 
+  def to_s 
+    node = @head
+    values = []
+    while node
+      values << node.value
+      node = node.next_node
+    end
+    values.map {|el| "( #{el} )"}.join(" -> ") + " -> nil "
+  end
+
 end
 
 
@@ -151,3 +161,4 @@ list.prepend("works")
 # p list.head
 p list.contains?("test2")
 p list.find("works")
+puts list
