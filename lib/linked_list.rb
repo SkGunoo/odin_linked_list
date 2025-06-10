@@ -19,7 +19,7 @@ class LinkedList
     else
       #travel to the last 'node' not tail 
       until last_node.next_node == nil
-        last_node = last_node.next_nodegi
+        last_node = last_node.next_node
       end 
       last_node.next_node = new_node
     end
@@ -175,14 +175,14 @@ end
 
 
 #test 
-list = LinkedList.new 
+# list = LinkedList.new 
 
-list.append("test")
-list.append("test2")
-list.prepend("haha")
-list.prepend("works")
-list.insert_at("insert",4)
-list.remove_at(0)
+# list.append("test")
+# list.append("test2")
+# list.prepend("haha")
+# list.prepend("works")
+# list.insert_at("insert",4)
+# list.remove_at(0)
 
 # p list.head
 # list.size
@@ -193,4 +193,4 @@ list.remove_at(0)
 # p list.head
 # p list.contains?("test2")
 # p list.find("works")
-puts list
+# puts list
