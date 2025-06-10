@@ -19,7 +19,7 @@ class LinkedList
     else
       #travel to the last 'node' not tail 
       until last_node.next_node == nil
-        last_node = last_node.next_node
+        last_node = last_node.next_nodegi
       end 
       last_node.next_node = new_node
     end
@@ -39,6 +39,18 @@ class LinkedList
       new_node.next_node = @head
       @head = new_node
     end
+  end
+
+  def size 
+    #starting with 1 because of the @head is a also a node
+    count = 1 
+    start = @head
+
+    until start.next_node.nil?
+      count += 1
+      start = start.next_node
+    end
+    "node count: #{count}"
   end
 
 end
@@ -66,3 +78,4 @@ list.prepend("works")
 
 
 p list.head
+puts list.size
