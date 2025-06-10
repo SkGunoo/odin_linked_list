@@ -140,6 +140,25 @@ class LinkedList
     node.next_node = new_node
   end
 
+  def remove_at(index)
+    #when you remove the head node make the 
+    #node at index 1 as head
+    node = @head
+    if index == 0 
+      @head = node.next_node
+    elsif index > self.size
+      puts "There is no node to remove"
+    else
+      #travel to the node before index
+      (index -1).times {node = node.next_node}
+      #point the node before the node we want to remove to
+      #point the node after we want to remove
+      #if 1 -> 2 -> 3 make the 1 -> 3 
+      node_to_remove = node.next_node
+      node.next_node = node_to_remove.next_node
+    end
+  end
+
 end
 
 
@@ -162,7 +181,8 @@ list.append("test")
 list.append("test2")
 list.prepend("haha")
 list.prepend("works")
-list.insert_at("insert",5)
+list.insert_at("insert",4)
+list.remove_at(0)
 
 # p list.head
 # list.size
