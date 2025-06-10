@@ -128,6 +128,18 @@ class LinkedList
     values.map {|el| "( #{el} )"}.join(" -> ") + " -> nil "
   end
 
+  def insert_at(value,index)
+    return puts "index value is bigger than linked list size can not insert a node" if index > self.size
+    new_node = Node.new(value)
+    node = @head
+    #travel to the node before insertion 
+    (index -1).times {node = node.next_node}
+    #point the new_node to current note at index
+    new_node.next_node = node.next_node
+    #then point the current node to new_node
+    node.next_node = new_node
+  end
+
 end
 
 
@@ -150,7 +162,7 @@ list.append("test")
 list.append("test2")
 list.prepend("haha")
 list.prepend("works")
-
+list.insert_at("insert",5)
 
 # p list.head
 # list.size
@@ -159,6 +171,6 @@ list.prepend("works")
 # puts list.at(2)
 # list.pop
 # p list.head
-p list.contains?("test2")
-p list.find("works")
+# p list.contains?("test2")
+# p list.find("works")
 puts list
