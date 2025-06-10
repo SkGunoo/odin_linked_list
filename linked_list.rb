@@ -107,6 +107,17 @@ class LinkedList
     false
   end
 
+  def find(value)
+    index = 0
+    node = @head
+    while node
+      return index if node.value == value
+      index += 1
+      node = node.next_node
+    end
+    nil
+  end
+
 end
 
 
@@ -139,3 +150,4 @@ list.prepend("works")
 # list.pop
 # p list.head
 p list.contains?("test2")
+p list.find("works")
